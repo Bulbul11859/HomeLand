@@ -4,7 +4,6 @@ import { Menu } from "@headlessui/react";
 import { HouseContext } from "./HouseContext";
 const CountryDropdown = () => {
   const { country, setCountry, countries } = useContext(HouseContext);
-  console.log(countries);
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Menu as="div" className="dropdown relative">
@@ -28,7 +27,7 @@ const CountryDropdown = () => {
           <Menu.Item className='cursor-pointer hover:text-violet-700 transition'
           as='li'
           key={index}
-          onClick={()=>setCountry(item)}
+          onClick={()=>{setCountry(item);setIsOpen(!isOpen)}}
           >
             {item}
             </Menu.Item>
