@@ -2,12 +2,16 @@ import React, { useContext, useState } from "react";
 import { RiHome5Line, RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
 import { Menu } from "@headlessui/react";
 import { HouseContext } from "./HouseContext";
+import { motion } from "framer-motion";
 const PropertyDropdown = () => {
   const { property, setProperty, properties } = useContext(HouseContext);
  
   const [isOpen, setIsOpen] = useState(false);
   return (
     <Menu as="div" className="dropdown relative">
+      <motion.div  whileTap={{ scale: 0.95 }}
+       transition={{ duration: 0.2 }}
+      >
       <Menu.Button
         className="dropdown-btn w-full text-left"
         onClick={() => setIsOpen(!isOpen)}
@@ -39,6 +43,7 @@ const PropertyDropdown = () => {
           </Menu.Item>
         ))}
       </Menu.Items>
+      </motion.div>
     </Menu>
   );
 };

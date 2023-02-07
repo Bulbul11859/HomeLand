@@ -1,15 +1,22 @@
 import React from "react";
 import { BiBed, BiArea, BiBath } from "react-icons/bi";
-
+import { motion } from "framer-motion"
 const House = ({ house }) => {
   return (
-    <div className="bg-white shadow-1 p-5 rounded-lg rounded-tl-[90px] w-full max-w-[352px] mx-auto cursor-pointer hover:shadow-2xl">
+    <motion.div className="bg-white shadow-1 p-5 rounded-lg rounded-tl-[90px] w-full max-w-[352px] mx-auto cursor-pointer hover:shadow-2xl"
+   
+    whileHover={{
+      scale: 1.08,
+      
+    }}
+    >
       <img src={house.image} className="mb-8" />
       <div className="flex mb-4 gap-x-2 ">
         <div className="bg-green-500 text-sm rounded-full text-white px-3">
           {house.type}
         </div>
-        <div className="bg-violet-500 rounded-full text-white px-3">
+        <div
+        className="bg-violet-500 rounded-full text-white px-3">
           {house.country}
         </div>
       </div>
@@ -38,7 +45,7 @@ const House = ({ house }) => {
         </div>
       </div>
       <div className="text-lg font-semibold mb-4 text-violet-600">{house.price}</div>
-    </div>
+    </motion.div>
   );
 };
 
