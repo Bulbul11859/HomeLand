@@ -23,7 +23,7 @@ const HouseList = () => {
       <div className="container mx-auto">
          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-14 col-end-auto ">
           {houses.map((house,index)=>(
-            <Link to={`/propert/${house.id}`}
+            <Link to={`/property/${house.id}`}
               key={index}>
               <House  house={house}/>
             </Link>
